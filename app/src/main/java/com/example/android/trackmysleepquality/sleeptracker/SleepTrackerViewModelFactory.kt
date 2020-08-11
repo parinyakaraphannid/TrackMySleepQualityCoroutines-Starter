@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.trackmysleepquality.database.SleepDatabase
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
+import com.example.android.trackmysleepquality.sleepquality.SleepQualityViewModel
 
 /**
  * This is pretty much boiler plate code for a ViewModel Factory.
@@ -33,10 +34,8 @@ class SleepTrackerViewModelFactory(
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SleepTrackerViewModel::class.java)) {
-
             return SleepTrackerViewModel(dataSource, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
-
